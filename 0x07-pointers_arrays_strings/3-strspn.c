@@ -3,7 +3,7 @@
 *_strspn - get the length of a prefix substring
 *
 *@accept: pointer to get the bytes
-*@s: pointer to string char type
+*@s: pointer to string of char type
 *
 *Return: number of bytes in s which are from accept
 */
@@ -16,10 +16,12 @@ while (*s)
 for (j = 0; accept[j]; j++)
 {
 if (*s == accept[j])
-{															i++;
-break;
+{
+i++;
+break;															}															else if (accept[j + 1] == '\0')
+{
+return (i);
 }
-else if (accept[j + 1] == '\0')												return (i);
 }
 s++;
 }
