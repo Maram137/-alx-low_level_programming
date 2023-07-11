@@ -12,6 +12,7 @@ char *s;
 s = argstostr(ac, av);
 if (s == NULL)
 {
+fprintf(stderr, "Failed to concatenate arguments\n");
 return (1);
 }
 printf("%s", s);
