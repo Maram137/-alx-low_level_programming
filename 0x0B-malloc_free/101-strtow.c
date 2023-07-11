@@ -61,14 +61,23 @@ if (strings == NULL)
 return (NULL);
 for (w = 0; w < words; w++)
 {
-while (str[index] == ' ')												index++;														letters = word_len(str + index);
+while (str[index] == ' ')
+index++;
+letters = word_len(str + index);
 strings[w] = malloc(sizeof(char) * (letters + 1));
 if (strings[w] == NULL)
 {
-for (; w >= 0; w--)													free(strings[w])													free(strings)
+for (; w >= 0; w--)
+free(strings[w]);
+free(strings);
 return (NULL);
-}															for (l = 0; l < letters; l++)												strings[w][l] = str[index++];
-strings[w][l] = '\0';													}
+}
+for (l = 0; l < letters; l++)
+{
+strings[w][l] = str[index++];
+}
+strings[w][l] = '\0';
+}
 strings[w] = NULL;
 return (strings);
 }
