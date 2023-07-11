@@ -5,7 +5,7 @@
 *             arguments are separated by a new line in the string.
 *@ac: The number of arguments passed to the program.
 *@av: An array of pointers to the arguments.
-*
+      *
 *Return: If ac == 0, av == NULL, or the function fails - NULL.
 *         Otherwise - a pointer to the new string.
 */
@@ -20,13 +20,17 @@ for (arg = 0; arg < ac; arg++)
 for (byte = 0; av[arg][byte]; byte++)
 size++;
 }
-str = malloc(sizeof(char) * size + 1);
+str = malloc(sizeof(char) * (size + 1));  /* Modified line*/
 if (str == NULL)
 return (NULL);
 index = 0;
 for (arg = 0; arg < ac; arg++)
 {
-for (byte = 0; av[arg][byte]; byte++)											str[index++] = av[arg][byte];												str[index++] = '\n';
+for (bye = 0; av[arg][byte]; byte++)
+{
+str[index++] = av[arg][byte];
+}
+str[index++] = '\n';
 }
 str[size] = '\0';
 return (str);
