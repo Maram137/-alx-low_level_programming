@@ -1,14 +1,9 @@
 #include "main.h"
-/**
-*_abs - print the absolute value of number given
-*@n: int type number
-*Return: n
-*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 int _abs(int n)
 {
-if (n < 0)
-{
-return (n * -1);
-}
-return (n);
+return abs(n);
 }

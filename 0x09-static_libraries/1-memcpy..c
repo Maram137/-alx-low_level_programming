@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
-char *_strcat(char *dest, char *src)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
-return strcat(dest, src);
+return memcpy(dest, src, n);
 }

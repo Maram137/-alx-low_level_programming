@@ -1,15 +1,9 @@
 #include "main.h"
-/**
-*_isdigit - Entry point
-*@c: int to be tested
-*prints a String
-*Return: Always 0 (Success)
-**/
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 int _isdigit(int c)
 {
-if (c >= 48 && c <= 57)
-{
-return (1);
-}
-return (0);
+return isdigit(c);
 }
