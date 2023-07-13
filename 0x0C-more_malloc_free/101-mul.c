@@ -48,15 +48,22 @@ for (i = len1 - 1; i >= 0; i--)
 {
 if (!_isdigit(num1[i]) || num1[i] == '-')
 {
-printf("Error\n");																			free(result);																				exit(98);																				}
+printf("Error\n");
+free(result);
+exit(98);
+}
 for (j = len2 - 1; j >= 0; j--)
 {
 if (!_isdigit(num2[j]) || num2[j] == '-')
-{																					printf("Error\n");
-free(result);																				exit(98);
+{
+printf("Error\n");
+free(result);
+exit(98);
 }
-result[i + j + 1] += (num1[i] - '0') * (num2[j] - '0');															result[i + j] += result[i + j + 1] / 10;
-result[i + j + 1] %= 10;																		}
+result[i + j + 1] += (num1[i] - '0') * (num2[j] - '0');
+result[i + j] += result[i + j + 1] / 10;
+result[i + j + 1] %= 10;
+}
 }
 i = 0;
 while (i < len1 + len2 && result[i] == 0)
