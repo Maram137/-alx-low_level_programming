@@ -1,6 +1,5 @@
-#include "function_pointers.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "3-calc.h"
 /**
 *main - Prints the result of simple operations.
@@ -23,13 +22,13 @@ op = argv[2];
 num2 = atoi(argv[3]);
 if (get_op_func(op) == NULL || op[1] != '\0')
 {
-printf("Error\n");													exit(99);
+printf("Error\n");
+exit(99);
 }
-if ((*op == '/' && num2 == 0) ||
-(*op == '%' && num2 == 0))
+if ((*op == '/' && num2 == 0) || (*op == '%' && num2 == 0))
 {
 printf("Error\n");
-exit(10);
+exit(100);
 }
 printf("%d\n", get_op_func(op)(num1, num2));
 return (0);
